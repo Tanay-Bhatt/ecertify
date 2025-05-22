@@ -1,0 +1,58 @@
+{% extends "webapp/base.html" %}
+
+{% block main %}
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.3/FileSaver.min.js"></script>
+
+	
+	{% if isvalid == 0 %}
+		<p class="head-verify">
+			Sorry! No certificate found for given ID.
+		</p>
+
+		<div class="verification-form">
+		
+		<p class="text">
+			Verify another certificate
+		</p>
+
+		<form action="{{url_for('verification')}}" method="post">
+			<input type="text" name="cid" placeholder="Certificate ID" required />
+			<input type="submit" value="Verify" />
+		</form>
+
+	</div>
+	{% else %}
+		<div class="certificate-container">
+
+			<input type="text" id="username" value="{{user.username}}" hidden />
+
+			<div class="image" >
+				<img id="image" src="{{url_for('static', filename='uploads/'+certificate.image)}}" alt="">
+			</div>
+
+			<div class="text-container">
+				<p class="head">{{user.name}}</p>
+				<p class="text">@{{user.username}}</p>
+
+				<p class="verification-text">
+					This certificate with ID {{certificate.id}} is issued to {{user.name}} by E-Certify.
+					
+					Date of Issuance : {{certificate.date.strftime('Date: %d-%m-%Y Time: %H-%M')}}.
+				</p>
+
+				<div class="download">
+					<button class="downloadpdf">Download PDF</button>
+					<button class="downloadpng">Download PNG</button>
+					<button class="downloadjpg">Download JPG</button>
+				</div>
+
+			</div>
+
+			<script src="{{url_for('static', filename='webapp/js/verification.js')}}"></script>
+
+		</div>		
+	{% endif %}
+
+{% endblock %}

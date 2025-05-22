@@ -1,0 +1,36 @@
+<!-- Extend from base admin layout -->
+{% extends "admin/admin_base.html" %}
+
+{% block content %}
+	
+
+	<div class="student">
+
+		{% if message %}
+			<p class="message">{{message}}</p>
+		{% endif %}
+
+		<p class="head">Student Information</p>
+
+		<form action="/admin/student/{{user.username}}" method="post">
+			<input type="text" name="userid" value="ID : {{user.id}}" disabled />
+			<input type="text" name="username" value="Username : {{user.username}}" disabled />
+			<input type="text" name="name" value="{{user.name}}" placeholder="Student Name" pattern="[a-zA-Z ]+" oninvalid="setCustomValidity('Please enter on alphabets only. ')" required />
+			<input type="email" name="email" placeholder="Email Address" value="{{user.email}}" required />
+			<input type="text" name="phone" placeholder="Phone Number" maxlength="10"  value="{{user.phone_num}}" required />
+
+			<a href="/admin/student/delete/{{user.username}}">Delete User</a>
+			<input type="submit" value="Update Student" />
+			
+
+		</form>
+		
+
+	</div>
+
+
+{% endblock content %}
+
+{% block scripts %}
+	<script src="{{url_for('static', filename='admin/js/student.js')}}"></script>
+{% endblock scripts %}

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>E-Certify</title>
+	<link rel="shortcut icon" href="{{url_for('static', filename='images/favicon.ico')}}" type="image/x-icon">
+	<link rel="icon" href="{{url_for('static', filename='images/favicon.ico')}}" type="image/x-icon">
+	<link rel="stylesheet" href="{{url_for('static', filename='webapp/css/style.css')}}">
+</head>
+<body>
+
+	{% include "webapp/includes/header.html" %}
+
+	<div class="main-content">
+		{% block main %}
+
+		{% endblock main %}
+
+		<div class="made-with-love">
+			Made with <span class="heart">❤️</span> by 
+			<a href="https://github.com/Tanay-Bhatt" target="_blank">Tanay Bhatt</a>
+		</div>
+
+	</div>
+</body>
+</html>

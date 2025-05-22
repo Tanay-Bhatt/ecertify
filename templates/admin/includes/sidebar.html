@@ -1,0 +1,40 @@
+
+
+
+<div class="sidebar-landscape">
+	
+	<div class="navigation-list">
+		<div class="navigation-item head">
+			<p class="item">Dashboard</p> <div  id="sidebar-toggle-landscape" class="icon"><i class="fa fa-chevron-right"></i></div>
+		</div>
+
+		<div class="navigation-item {% if page == 'add-student' %} active {% endif %}">
+			<a href="{{url_for('add_student')}}">
+				
+				<p class="item">Add Students</p> <div class="icon"><i class="fa fa-user-plus"></i></div>
+
+			</a>
+		</div>
+		<div class="navigation-item">
+			<a href="{{url_for('all_students')}}">
+				<p class="item">All Students</p> <div class="icon"><i class="fa fa-users"></i></div>
+			</a>
+		</div>
+		<div class="navigation-item">
+			<a href="{{url_for('templates')}}">
+				<p class="item">Generate Certificate</p> <div class="icon"><i class="fa fa-plus"></i></div>	
+			</a>
+		</div>
+		<div class="navigation-item">
+			<a href="{{url_for('all_certificates')}}">
+				<p class="item">All Certificates</p> <div class="icon"><i class="fa fa-certificate"></i></div>
+			</a>
+		</div>
+	</div>
+
+</div>
+
+
+{% block scripts %}
+	<script src="{{url_for('static', filename='admin/js/sidebar.js')}}"></script>
+{% endblock scripts %}

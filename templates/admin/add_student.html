@@ -1,0 +1,42 @@
+<!-- Extend from base admin layout -->
+{% extends "admin/admin_base.html" %}
+
+{% block content %}
+	
+
+	<div class="add-student">
+
+		{% if message %}
+			<p class="message">{{message}}</p>
+		{% endif %}
+
+
+		<div class="upload-csv">
+			<p class="head">Upload CSV file to add bulk students</p>
+			<form action="{{url_for('add_student')}}" method="POST" enctype="multipart/form-data">
+				<input type="text" hidden="true" name="type" value="csv" />
+				<input type="file" name="file" id="csvfile" accept=".csv" required hidden>
+				<label for="csvfile">Choose File</label>
+
+				<input type="submit" value="Upload" />
+			</form>
+		</div>
+
+		<div class="add-student-form">
+			<p class="head">Add Single Student</p>
+			<form action="{{url_for('add_student')}}" method="POST">
+				<input type="text" hidden="true" name="type" value="form" />
+				<input type="text" name="name" placeholder="Student Name" pattern="[a-zA-Z ]+" oninvalid="setCustomValidity('Please enter on alphabets only. ')" required />
+				<input type="email" name="email" placeholder="Email Address"  required />
+				<input type="text" name="number"  placeholder="Phone Number" maxlength="10" oninvalid="setCustomValidity('Please enter a valid number. ')" required />
+				<input type="submit" value="Add Student">
+			</form>
+		</div>
+	</div>
+
+
+{% endblock content %}
+
+{% block scripts %}
+	<script src="{{url_for('static', filename='admin/js/add_students.js')}}"></script>
+{% endblock scripts %}

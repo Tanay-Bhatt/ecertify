@@ -1,0 +1,99 @@
+<!-- Extend from base admin layout -->
+{% extends "admin/admin_base.html" %}
+
+{% block content %}
+	
+	
+
+	<div class="info-boxes">
+		<div class="box">
+			<div class="description">
+				<div class="num">
+					{{num_certificates}}
+				</div>
+				<div class="desc">
+					Total Certificates
+				</div>
+			</div>
+			<div class="icon">
+				<i class="fa fa-certificate"></i>
+			</div>
+		</div>
+
+		<div class="box">
+			<div class="description">
+				<div class="num">
+					{{num_students}}
+				</div>
+				<div class="desc">
+					Total Students
+				</div>
+			</div>
+			<div class="icon">
+				<i class="fa fa-users"></i>
+			</div>
+		</div>
+
+		
+
+		<div class="box">
+			<div class="description">
+				<div class="num">
+					{{num_templates}}
+				</div>
+				<div class="desc">
+					Certificate Templates
+				</div>
+			</div>
+			<div class="icon">
+				<i class="fa fa-clone"></i>
+			</div>
+		</div>
+	</div>
+
+	<p class="head">
+		Recently Generated Certificates
+	</p>
+
+	<table class="recent-certificates">
+		<thead>
+			<tr>
+				<td>Certificate ID</td>
+				<td>Name</td>
+				<td>Email</td>
+				<td>Verification Link</td>
+			</tr>
+		</thead>
+
+		<tbody>
+			{% for certificate in certificates %}
+				<tr>
+					<td>
+						{{certificate.id}}
+					</td>
+					<td>
+						{{certificate.name}}
+					</td>
+					<td>
+						{{certificate.email}}
+					</td>
+					<td>
+						<a target="_blank" href="{{base_url}}/verify/{{certificate.id}}">{{base_url}}/verify/{{certificate.id}}</a>
+					</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+
+	<!-- <div class="quick-actions">
+		<p class="head-text">
+			Quick Start <i class="fa fa-arrow-right"></i>
+		</p>
+
+		<div class="boxes">
+			<div class="box">
+				
+			</div>
+		</div>
+	</div> -->
+{% endblock content %}

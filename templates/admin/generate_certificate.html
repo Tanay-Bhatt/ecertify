@@ -1,0 +1,104 @@
+<!-- Extend from base admin layout -->
+{% extends "admin/admin_base.html" %}
+
+{% block content %}
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+	
+
+	<div class="certificate">
+
+		{% if message %}
+			<p class="message">{{message}}</p>
+		{% endif %}
+
+
+		<div class="certificate-editor">
+			<div class="certificate">
+				<div class="container">
+					<img src="{{url_for('static', filename='assets/certificates/' + certificate.template_src)}}" alt="">
+					<div class="content" style="color:{{certificate.template_color}};">
+						<div id="chead">CERTIFICATE</div>
+						<div id="csubhead">Of <span>Completion</span></div>
+
+						<p id="ctext3">This certificate is presented to</p>
+						<p id="cname">{{student_details[0]["name"]}}</p>
+
+						<p id="cdescription">
+							Lorem ipsum dolor sit, amet, consectetur adipisicing elit. Modi quia sapiente, doloremque totam officia iure voluptatum ad corporis exercitationem.
+						</p>
+
+						<p id="cissuername">Tanay Bhatt</p>
+
+						<p id="cissuerdesgctr"><span id="cissuerdesg">E-Certify Admin</span>
+						<span id="certificateid">Certificate Id:{{cid}}</span>
+						</p>
+
+						
+					</div>
+				</div>
+			</div>
+
+			<div class="options">
+				<p class="head">Options</p>
+
+				<div class="input-group">
+					<label>Certificate Type</label>
+					<input type="text" id="type" value="Completion" />
+				</div>
+
+				<div class="input-group">
+					<label>Name on Certificate</label>
+					<!-- <input type="text" id="name" value="Tanay Bhatt" readonly /> -->
+					<select name="" id="name">
+						{% for student in student_details %}
+							<option value="{{student['username']}}||{{student['name']}}">{{student["name"]}}</option>
+						{% endfor %}
+					</select>
+				</div>
+
+				<div class="input-group">
+					<label>Description</label>
+					<textarea name="" id="description">
+Lorem ipsum dolor sit, amet, consectetur adipisicing elit. Modi quia sapiente, doloremque totam officia iure voluptatum ad corporis exercitationem.
+					</textarea>
+				</div>
+
+				<div class="input-group">
+					<label>Issuer Name</label>
+					<input type="text" id="issuername" value="Tanay Bhatt" />
+				</div>
+
+				<div class="input-group">
+					<label>Issuer Designation</label>
+					<input type="text" id="issuerdesg" value="E-Certify Admin" />
+				</div>
+
+				<div class="input-group">
+					<button id="download">
+						Download Certificate
+					</button>
+
+					<button id="generate">
+						Generate Certificate
+					</button>
+
+					<form action="{{url_for('publish_certificate')}}" id="generateform" method="post">
+						
+						<input type="text" name="formuserid" id="formuserid" hidden/>
+						<input type="text" name="formimage" id="formimage" hidden/>
+					</form>
+				</div>
+
+			</div>
+		</div>		
+		
+
+	</div>
+
+
+{% endblock content %}
+
+{% block scripts %}
+	<script src="{{url_for('static', filename='admin/js/generate_certificate.js')}}"></script>
+{% endblock scripts %}

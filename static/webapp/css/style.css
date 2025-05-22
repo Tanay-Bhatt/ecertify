@@ -1,0 +1,304 @@
+body {
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background: #eaeaff;
+}
+
+header {
+	height: 11vmin;
+	width: 100%;
+	background: #fff;
+	display: flex;
+	flex-direction: row;
+	justify-content: start;
+	align-items: center;
+	position: relative;
+}
+
+header a {
+	display: flex;
+	flex-direction: row;
+	justify-content: start;
+	align-items: center;
+	text-decoration: none;
+	height: 100%;
+	/*color: #fff;*/
+}
+
+
+header a.admin {
+	position: absolute;
+	right: 5%;
+	color: #fff;
+	background: #222;
+	height: 50%;
+	width: 20vmin;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+	font-size: 2.7vmin;
+}
+
+
+
+header img.logo {
+	height: 70%;
+	margin-left: 4vmin;
+}
+
+header p.head-text {
+	font-size: 4.7vmin;
+	font-weight: bold;
+	font-family: "Open Sans";
+	color: #333;
+	margin-left: 2vmin;
+}
+
+p.head-index {
+	font-size: 8vmin;
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+	color: #336;
+	margin-top: 4vmin;
+	font-weight: bold;
+	text-align: center;
+}
+
+p.head-index span.grad {
+	background: -webkit-linear-gradient(45deg, #f12711, #f5af19);
+	-webkit-background-clip: text;
+  	-webkit-text-fill-color: transparent;
+}
+
+.verification-form {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin-top: 5vmin;
+}
+
+.verification-form p.text {
+	font-size: 3vmin;
+	color: #447;
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+.verification-form form {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+
+.verification-form form input {
+	border-radius: .5vmin;
+	/*border: 1px solid #447a;*/
+	border: none;
+	outline: none;
+	text-indent: 2vmin;
+	color: #444;
+	background: #fff;
+	height: 6vmin;
+	width: 15vw;
+	padding: 0;
+	font-size: 2.5vmin;
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+
+.verification-form form input[type=submit] {
+	margin-left: 2vmin;
+	background: linear-gradient(45deg, #f12711, #f5af19);
+	font-size: 3.3vmin;
+	color: #fff;
+}
+
+.head-verify {
+	font-size: 5vmin;
+	text-align: center;
+	margin-top: 4vmin;
+	color: #447;
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+.certificate-container {
+	width: 90%	;
+	margin-left: 5%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	align-items: center;
+	margin-top: 6vmin;
+
+}
+
+.certificate-container .image {
+	width: 50%;
+}
+
+.certificate-container .image img {
+	width: 100%;
+}
+
+.certificate-container .text-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: start;
+	align-items: start;
+	width: 40%	;
+}
+
+.certificate-container .text-container p.head {
+	font-size: 3.2vmin;
+	color: #447;
+	font-weight: bold;
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+	margin-bottom: 0;
+}
+
+.certificate-container .text-container p.text {
+	font-size: 2.7vmin;
+	color: #447;
+	/*font-weight: bold;*/
+	margin-top: 1vmin;
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+.certificate-container .text-container p.verification-text {
+	font-size: 2.8vmin;
+	color: #333;
+	/*font-weight: bold;*/
+	margin-top: 4vmin;
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+.certificate-container .text-container .download {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	margin-top: 3vmin;
+	width: 90%;
+}
+
+.certificate-container .text-container .download button {
+	width: 90%;
+	margin-left: 5%;
+	background: #222;
+	color: #fff;
+	transition: .4s;
+	font-size: 2.6vmin;
+	height: 6vmin;
+	border: none;
+	outline: none;
+
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+.certificate-container .download button:hover {
+	border-radius: 1vmin;
+}
+
+@media (orientation: portrait) {
+	header {
+		height: 13vmin;
+	}
+
+	.verification-form {
+		padding-top: 10vmin;
+	}
+
+	.certificate-container .text-container p.text {
+		font-size: 3.5vmin;
+	}
+
+
+	.verification-form form {
+		flex-direction: column;
+		width: 100%;
+	}
+
+	.verification-form form  input {
+		width: 100%;
+		height: 10vmin;
+		font-size: 3.3vmin;
+	}
+
+	.verification-form form  input[type=submit] {
+		margin-top: 2.5vmin;
+		margin-left: 0;
+		font-size: 	4vmin;
+	}
+
+	.certificate-container {
+		flex-direction: column;
+	}
+
+	.certificate-container .image {
+		width: 100%;
+	}
+
+
+	.certificate-container .text-container {
+		width: 100%;
+	}
+
+	.certificate-container .text-container p.head {
+		font-size: 4vmin;
+	}
+
+	.certificate-container .text-container p.text {
+		font-size: 3.5vmin;
+	}
+
+	.certificate-container .text-container p.verification-text {
+		font-size: 3.5vmin;
+	}
+
+	.certificate-container .text-container .download {
+		grid-template-columns: repeat(1, 1fr);
+		width: 90%;
+	}
+
+	.certificate-container .text-container .download button {
+		width: 100%;
+		/*margin-left: 10%;*/
+		margin-top: 2vmin;
+		height: 9vmin;
+		font-size: 3.2vmin;
+	}
+ 	
+
+ 	header a.admin {
+ 		font-size: 3vmin;
+ 	}
+
+
+}
+
+.made-with-love {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    color: #555;
+    margin-top: 20px;
+    font-size: 1rem;
+  }
+
+  .made-with-love .heart {
+    color: #e25555;
+    font-size: 1.2rem;
+  }
+
+.made-with-love a {
+    color: #0077cc;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.made-with-love a:hover {
+    text-decoration: underline;
+}

@@ -1,0 +1,1322 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display');
+
+:root {
+	--vfh : 100vh;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background: #F7F7F7;
+}
+
+
+/*header styling*/
+
+header {
+	height: 11vmin;
+	width: 100%;
+	background: #fff;
+	display: flex;
+	flex-direction: row;
+	justify-content: start;
+	align-items: center;
+	position: relative;
+}
+
+header a {
+	display: flex;
+	flex-direction: row;
+	justify-content: start;
+	align-items: center;
+	text-decoration: none;
+	height: 100%;
+	/*color: #fff;*/
+}
+
+
+
+header img.logo {
+	height: 70%;
+	margin-left: 4vmin;
+}
+
+header p.head-text {
+	font-size: 4.7vmin;
+	font-weight: bold;
+	font-family: "Open Sans";
+	color: #333;
+	margin-left: 2vmin;
+}
+
+header #logout {
+	position: absolute;
+	right: 5%;
+	color: #444;
+	font-size: 3vmin;
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+/*sidebar styling*/
+
+.sidebar-landscape {
+	width: 35vmin;
+	height: calc( 100% - 11vmin );
+	position: fixed;
+	/*left: 0;*/
+	top: 11vmin;
+	background: #2A2C2E;
+	color: #fff;
+	display: flex;
+	flex-direction: column;
+	justify-content: start;
+	align-items: center;
+	left: -28vmin;
+	transition: .5s;
+	z-index: 999;
+}
+
+.sidebar-landscape .navigation-list {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: start;
+	align-items: center;
+}
+
+.sidebar-landscape .navigation-list .navigation-item {
+	width: 100%;
+	height: 7vmin;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;	
+	font-family: "Open Sans";
+	color: #fff;
+}
+
+.sidebar-landscape .navigation-list .navigation-item.active {
+	background: #232327;
+}
+
+.sidebar-landscape .navigation-list .navigation-item a {
+	text-decoration: none;
+	color: #fff;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;	
+	font-family: "Open Sans";
+	width: 100%;
+}
+
+.sidebar-landscape .navigation-list .navigation-item.head {
+	background: #272727;
+}
+
+.sidebar-landscape .navigation-list .navigation-item:hover {
+	background: #fff3;
+}
+
+.sidebar-landscape .navigation-list .navigation-item.head:hover {
+	background: #272727;
+}
+
+.sidebar-landscape .navigation-list .navigation-item.head .icon:hover {
+	background: #fff3;
+}
+
+.sidebar-landscape .navigation-list .navigation-item .item {
+	width: 80%;
+	height: 100%;
+	font-size: 2.5vmin;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: start;
+	text-indent: 1.5vmin;
+}
+
+.sidebar-landscape .navigation-list .navigation-item .icon {
+	width: 20%;
+	height: 100%;
+	font-size: 2.9vmin;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+/*Main content box styling*/
+
+.main-content {
+	width: calc(100% - 7vmin);
+	height: calc(100% - 11vmin);
+	background: #eef;
+	top: 11vmin;
+	left: 7vmin;
+	position: fixed;
+	transition: .5s;
+	display: flex;
+	flex-direction: column;
+	justify-content: start;
+	align-items: center;
+	overflow-style: scrollbar;
+	overflow: scroll;
+}
+
+/*description boxes*/
+
+.info-boxes {
+	width: 90%;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	margin-top: 5vmin;
+}
+
+.info-boxes .box {
+	width: 90%;
+	/*margin-left: 5%;*/
+	background: #fff;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	align-items: center;
+	padding-top: 3vmin;
+	padding-bottom: 3vmin;
+	font-family: "Open Sans";
+	box-shadow: 0 1vmin 5vmin .4vmin #3332;
+}
+
+.info-boxes .box .description {
+	width: 70%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: start;
+}
+
+.info-boxes .box .description .num {
+	font-size: 3vmin;
+	color: #444;
+	font-weight: bold;
+}
+
+.info-boxes .box .description .desc {
+	font-size: 2.1vmin;
+	color: #555;
+}
+
+.info-boxes .box .icon {
+	width: 20%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.info-boxes .box .icon i {
+	/*padding: 1vmin;*/
+	height: 6vmin;
+	width: 6vmin;
+	background: #90A4AE;
+	color: #546E7A;
+	border-radius: 50vmin;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.info-boxes .box:nth-child(1) .icon i {
+	background: #5C6BC044;
+	color: #5C6BC0;
+}
+
+
+.info-boxes .box:nth-child(2) .icon i {
+	background: #03A9F444;
+	color: #03A9F4;
+}
+
+.info-boxes .box:nth-child(3) .icon i {
+	background: #AB47BC44;
+	color: #AB47BC;
+}
+
+.info-boxes .box:nth-child(4) .icon i {
+	background: #FFCA2844;
+	color: #FFCA28;
+}
+
+.recent-certificates {
+	width: 90%;
+	border-spacing: 0;
+	box-shadow: .2vmin .2vmin 0.8vmin 0.4vmin #3333;
+}
+
+.recent-certificates thead {
+	font-size: 2.9vmin;
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+	color: #fff;
+	background: #2a2a2e;
+	/*text-indent: 2vmin;*/
+}
+
+.recent-certificates thead  tr {
+	height: 6vmin;
+	text-align: center;
+}
+
+.recent-certificates tbody tr {
+	height: 5vmin;
+	color: #333;
+	/*text-indent: 2vmin;*/
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+	font-size: 2.3ovmin;
+	background: #dde;
+	text-align: center;
+}
+
+.recent-certificates tbody tr a {
+	color: #444;
+}
+
+.recent-certificates tbody tr:nth-of-type(odd) {
+	background: #eef;
+}
+
+
+/*add student styling*/
+
+.add-student,
+.students,
+.student,
+.template,
+.certificate {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin-top: 5vmin;
+	padding-bottom: 5vmin;
+}
+
+.certificate {
+	/*height: 100%;*/
+	margin-top: 2vmin;
+}
+
+.add-student .upload-csv {
+	background: #fff;
+	width: 80%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding-bottom: 2vmin;
+	padding-top: 2vmin;
+	/*height: 9vmin;*/
+}
+
+.add-student .upload-csv p.head {
+	color: #337;
+	font-family: Arial;
+	font-size: 3vmin;
+	width: 90%;
+	font-weight: bold;
+}
+
+.add-student .upload-csv form {
+	width: 90%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.add-student .upload-csv form label {
+	height: 6vmin;
+	width: 78%;
+	background: #f7f7f7;
+	color: #333;
+	font-size: 2.6vmin;
+	font-family: Arial;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: start;
+	text-indent: 2vmin;
+}
+
+.add-student .upload-csv form input[type=submit] {
+	width: 18%;
+	background: #222;
+	height: 6vmin;
+	color: #fff;
+	font-size: 3.2vmin;
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+	border: none;
+	outline: none;
+	transition: .4s;
+}
+
+.add-student .upload-csv form input[type=submit]:hover {
+	border-radius: 2vmin;
+}
+
+.add-student .add-student-form {
+	background: #fff;
+	width: 80%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding-bottom: 2vmin;
+	padding-top: 2vmin;
+	margin-top: 4vmin;
+}
+
+.add-student .add-student-form p.head {
+	color: #337;
+	font-family: Arial;
+	font-size: 3vmin;
+	width: 90%;
+	font-weight: bold;
+}
+
+.add-student .add-student-form form {
+	width: 90%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.add-student .add-student-form form input {
+	width: 23%;
+	height: 6.5vmin;
+	background: #f7f7f7;
+	color: #444;
+	font-size: 2.7vmin;
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+	text-indent: 1vmin;
+	border: none;
+	outline: none;
+}
+
+.add-student .add-student-form form input::placeholder {
+	color: #444;
+	font-size: 2.7vmin;
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+	text-indent: 1vmin;
+}
+
+.add-student .add-student-form form input[type=submit] {
+	background: #222;
+	color: #fff;
+	font-size: 3.2vmin;
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+	border: none;
+	outline: none;
+	transition: .4s;
+}
+
+.add-student .add-student-form form input[type=submit]:hover {
+	border-radius: 2vmin;
+}
+
+
+/*students styling*/
+
+.students p.head,
+.student p.head,
+.template p.head {
+	color: #335;
+	font-family: Arial;
+	font-size: 3.5vmin;
+	width: 90%;
+	font-weight: bold;
+	margin-left: 5%;
+	margin-top: 4vmin;
+}
+
+p.head {
+	color: #335;
+	font-family: Arial;
+	font-size: 3.5vmin;
+	width: 95%;
+	font-weight: bold;
+	margin-left: 5%;
+	margin-top: 4vmin;
+}
+
+
+.students .student-table {
+	width: 85%;
+	margin-top: 4vmin;
+	border: 0;
+	border-spacing: 0;
+	box-shadow: .2vmin .2vmin 0.8vmin 0.4vmin #3333;
+
+}
+
+.students .student-table thead {
+	height: 6vmin;
+	/*font-weight: bold;*/
+	color: #fff;
+	font-size: 3vmin;
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+	/*text-align: center;*/
+	/*text-indent: 2vmin;*/
+	background: #2A2C2E;
+	text-align: center;
+}
+
+.students .student-table tbody {
+	color: #446;
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+	font-size: 2.5vmin;
+	text-align: center;
+}
+
+.students .student-table tbody tr {
+	background: #eee;
+	height: 5vmin;
+}
+
+.students .student-table tbody tr td {
+	/*text-indent: 2vmin;*/
+}
+
+.students .student-table tbody tr td a {
+	color: #444;
+}
+
+.students .student-table tbody tr:nth-of-type(odd) {
+	background: #fff;
+}
+
+.students .pagination {
+	height: 6vmin;
+	width: 90%;
+	margin-top: 5vmin;
+	display: flex;
+	flex-direction: row;
+	justify-content: start;
+	align-items: center;
+}
+
+.students .pagination .link {
+	width: 9vmin;
+	height: 100%;
+	background: #fff;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.students .pagination .link a {
+	color: #333;
+	text-decoration: none;	
+	font-size: 2.8vmin;
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+.students .pagination .link.active {
+	background: #2a2a2e;
+}
+
+.students .pagination .link.active a {
+	color: #fff;
+}
+
+
+/*student styling*/
+
+.student form {
+	width: 85%;
+	background: #fff;
+	padding-top: 2vmin;
+	padding-bottom: 2vmin;
+	margin-top: 3vmin;
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+}
+
+.student form input,
+.student form a {
+	height: 4.5vmin;
+	width: 95%;
+	margin-left: 2.5%;
+	border: none;
+	background: #f3f3ff;
+	color: #333;
+	font-size: 2.3vmin;
+	text-indent: 2vmin;
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+	outline: none;
+	margin-top: 2vmin;
+	padding: 0;
+	text-decoration: none;
+}
+
+.student form a  {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	color: #fff;
+	background: #E91E63;
+}
+
+.student form input[type=submit] {
+	color: #fff;
+	/*font-size: 3vmin;*/
+	background: #222;
+}
+
+
+.student form input::placeholder {
+	color: #333;
+	font-size: 2.6vmin;
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+
+/*universal*/
+
+.message {
+	background: #fff;
+	width: 80%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding-bottom: 1vmin;
+	padding-top: 1vmin;
+	margin-top: 6vmin;
+	color: #337;
+	font-size: 2.7vmin;
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+/*template styling*/
+
+.template .template-container {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	width: 85%;
+	margin-top: 4vmin;
+}
+
+.template .template-container .item {
+	height: 30vmin;
+	width: 90%;
+	position: relative;
+	overflow: hidden;
+	margin-top: 3vmin;
+	/*margin-left: 5%;*/
+}
+
+.template .template-container .item img {
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.template .template-container .item .overlay {
+	height: 100%;
+	width: 100%;
+	background: #fffa;
+	position: absolute;
+	top: 100%;
+	left: 0;
+	transition: .3s;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.template .template-container .item:hover .overlay {
+	top: 0;
+}
+
+.template .template-container .item .overlay a {
+	height: 6vmin;
+	width: 40%;
+	color: #fff;
+	text-decoration: none;
+	background: #222;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	font-size: 2.3vmin;
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+/*certificate styling*/
+
+.certificate .certificate-editor {
+	/*height: 95%;*/
+	width: 95%;
+	background: #fff;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+
+.certificate .certificate-editor .certificate {
+	width: 75%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.certificate .certificate-editor .certificate .container {
+	width: 70%;
+	height: 80%;
+	position: relative;
+	padding: 3vmin;
+	box-shadow: 0 0 .5vmin .7vmin #3333;
+}
+
+.certificate .certificate-editor .certificate .container img {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 2;
+}
+
+.certificate .certificate-editor .certificate .container .content {
+	width: 100%;
+	height: 80%;
+	position: absolute;
+	top: 10%;
+	left: 0;
+	z-index: 3;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.certificate .certificate-editor .certificate .container .content #chead {
+	/*font-weight: bold;*/
+	font-size: 5vmin;
+	/*font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;*/
+	font-family: serif;
+}
+
+.certificate .certificate-editor .certificate .container .content #csubhead {
+	/*font-weight: bold;*/
+	font-size: 3.5vmin;
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+	margin-bottom: 0;
+}
+
+.certificate .certificate-editor .certificate .container .content #ctext3 {
+	font-size: 2.7vmin;
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+	margin-top: 4vmin;
+	margin-bottom: 0;
+}
+
+.certificate .certificate-editor .certificate .container .content #cname {
+	font-size: 5.5vmin;
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+	margin-top: 1vmin;
+	padding: 0;
+	margin-bottom: 0;
+	font-family: "Playfair Display";
+}
+
+.certificate .certificate-editor .certificate .container .content #cdescription {
+	font-size: 2.2vmin;
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+	margin: 0;
+	margin-top: 1vmin;
+	width: 70%;
+	text-align: center;
+	padding: 0;
+	margin-bottom: 0;
+}
+
+.certificate .certificate-editor .certificate .container .content #cissuername {
+	font-size: 2vmin;
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+	margin-top: 6vmin;
+	padding: 0;
+	margin-bottom: 0;
+	width: 70%;
+	text-align: left;
+}
+
+.certificate .certificate-editor .certificate .container .content #cissuerdesgctr {
+	font-size: 2vmin;
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+	margin-top: 1vmin;
+	padding: 0;
+	width: 70%;
+	text-align: left;
+	position: relative;
+}
+
+.certificate .certificate-editor .certificate .container .content #certificateid {
+	font-size: 2vmin;
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+	margin-top: 1vmin;
+	padding: 0;
+	width: 70%;
+	position: absolute;
+	right: 0;
+	text-align: right;
+}
+
+
+
+.certificate .certificate-editor .options {
+	width: 25%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-items: center;
+	border-left: .3vmin solid #444;
+}
+
+.certificate .certificate-editor .options p.head {
+	font-size: 3vmin;
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+	color: #224;
+}
+
+.certificate .certificate-editor .options .input-group {
+	width: 90%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: start;
+}
+
+.certificate .certificate-editor #outputcertificate {
+	display: none;
+}
+
+.certificate .certificate-editor .options .input-group label {
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+	font-size: 2vmin;
+	color: #558;
+}
+
+.certificate .certificate-editor .options .input-group input,
+.certificate .certificate-editor .options .input-group textarea, 
+.certificate .certificate-editor .options .input-group select {
+	height: 5.3vmin;
+	margin-top: 0.6vmin;
+	width: 95%;
+	border: none;
+	outline: none;
+	background: #eee;
+	color: #448;
+	font-size: 2.4vmin;
+	padding-left: 5%;
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+
+.certificate .certificate-editor .options .input-group select {
+	width: 100%;
+}
+
+.certificate .certificate-editor .options .input-group textarea {
+	height: 14vmin;
+	resize: none;
+	display: table-cell;
+}
+
+.certificate .certificate-editor .options .input-group button {
+	height: 7vmin;
+	width: 100%;
+	color: #fff;
+	background: #222;
+	font-size: 3vmin;
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+	margin-top: 1.2vmin;
+	transition: .4s;
+	border: none;
+}
+
+.certificate .certificate-editor .options .input-group button:hover {
+	border-radius: 2vmin;
+}
+
+
+/*generated certificate styling*/
+
+.certificate p.head {
+	font-size: 3.5vmin;
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+	color: #446;
+}
+
+.certificate .certificate-img {
+	height: 50vmin;
+}
+
+.certificate .certificate-img img {
+	height: 100%;
+}
+
+.certificate p.text {
+	font-size: 2.6vmin;
+	color: #446; 
+	margin-top: 0;
+	margin-bottom: 0;
+	margin-top: 1.5vmin;
+}
+
+.certificate .button-group {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	margin-top: 4vmin;
+}
+
+.certificate .button-group button {
+	height: 6vmin;
+	width: 12vw;
+	background: #222;
+	transition: .4s;
+	color: #fff;
+	font-size: 2.7vmin;
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+	border: none;
+	outline: none;
+	margin-left: 4vmin;
+}
+
+.certificate .button-group button:hover {
+	border-radius: 2vmin;
+}
+
+@media (orientation: portrait) {
+	.info-boxes {
+		grid-template-columns: repeat(1, 1fr);
+	}
+
+	.info-boxes .box{
+		margin-left: 5%;
+		margin-top: 3vmin;
+	}
+
+	.info-boxes .box .description .num {
+		font-size: 3.3vmin;
+	}
+
+	.info-boxes .box .description .desc {
+		font-size: 3vmin;
+	}
+
+	.info-boxes .box .icon i {
+		height: 8vmin;
+		width: 8vmin;
+	}
+
+
+	.recent-certificates thead {
+		font-size: 3.2vmin;
+	}
+
+	.recent-certificates thead  tr {
+		height: 6vmin;
+	}
+
+	.recent-certificates tr td {
+		display: none;
+	}
+
+	.recent-certificates tr td:nth-child(1),
+	.recent-certificates tr td:nth-child(2),
+	.recent-certificates tr td:nth-child(4) {
+		display: table-cell;
+	}
+
+	.recent-certificates tr td:nth-child(4) a {
+		font-size: 0;
+	}
+
+	.recent-certificates tr td:nth-child(4) a::after {
+		content: "Verify";
+		font-size: 3vmin;
+	}
+
+	
+
+	.recent-certificates tbody tr {
+		font-size: 3.2vmin;
+	}
+
+
+	/*add student styling*/
+
+	
+
+	
+
+	
+
+	.add-student .upload-csv p.head {
+		color: #337;
+		font-family: Arial;
+		font-size: 3.3vmin;
+		width: 90%;
+		font-weight: bold;
+	}
+
+
+	.add-student .upload-csv form label {
+		height: 6vmin;
+		width: 60%;
+		font-size: 2.8vmin;
+	}
+
+	.add-student .upload-csv form input[type=submit] {
+		width: 37%;
+		background: #222;
+		font-size: 3.2vmin;
+	}
+
+	.add-student .upload-csv form input[type=submit]:hover {
+		border-radius: 2vmin;
+	}
+
+	.add-student .add-student-form {
+		background: #fff;
+		width: 80%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		padding-bottom: 2vmin;
+		padding-top: 2vmin;
+		margin-top: 4vmin;
+	}
+
+	.add-student .add-student-form p.head {
+		color: #337;
+		font-family: Arial;
+		font-size: 3.5vmin;
+		width: 90%;
+		font-weight: bold;
+	}
+
+	.add-student .add-student-form form {
+		width: 90%;
+		display: grid;
+		grid-template-columns: repeat(1, 1fr);
+	}
+
+	.add-student .add-student-form form input {
+		width: 90%;
+		margin-left: 5%;
+		margin-top: 3vmin;
+		height: 6.5vmin;
+		font-size: 2.9vmin;
+		padding: 0;
+	}
+
+	.add-student .add-student-form form input::placeholder {
+		font-size: 2.9vmin;
+	}
+
+	.add-student .add-student-form form input[type=submit] {
+		font-size: 3.4vmin;
+		padding: 0;
+	}
+
+
+
+	/*students styling*/
+
+	.students p.head,
+	.student p.head,
+	.template p.head {
+		font-size: 4vmin;
+	}
+
+
+	.students .student-table tr td {
+		display: none;
+	}
+
+	.students .student-table tr td:nth-child(1),
+	.students .student-table tr td:nth-child(2),
+	.students .student-table tr td:nth-child(3),
+	.students .student-table tr td:nth-child(5) {
+		display: table-cell;
+	}
+
+	.students .student-table tr td:nth-child(5) a {
+		font-size: 0;
+	}
+
+	.students .student-table tr td:nth-child(5) a::after {
+		content: "Verify";
+		font-size: 3vmin;
+	}
+
+
+
+	/*student styling*/
+
+	.student form {
+		grid-template-columns: repeat(1, 1fr);
+	}
+
+	.student form input,
+	.student form a {
+		height: 6vmin;
+		font-size: 2.9vmin;	
+	}
+
+
+	.student form input::placeholder {
+		font-size: 2.9vmin;
+	}
+
+
+	/*universal*/
+
+	.message {
+		font-size: 3vmin;
+	}
+
+	/*template styling*/
+
+	.template .template-container {
+		grid-template-columns: repeat(1, 1fr);
+		margin-left: 7.5%;
+		margin-bottom: 5vmin;
+	}
+
+	.template .template-container .item {
+		margin-top: 4vmin;
+		height: 45vmin;
+		width: 90%;
+		/*margin-left: 5%;*/
+	}
+
+
+
+	.template .template-container .item .overlay a {
+		height: 8vmin;
+		font-size: 2.9vmin;
+	}
+
+	/*certificate styling*/
+
+	.certificate {
+		height: 100%;
+	}
+
+	.certificate .certificate-editor {
+		flex-direction: column;
+		width: 100%;
+		padding-bottom: 5vmin;
+		height: 100%;
+	}
+
+	.certificate .certificate-editor .certificate {
+		width: 100%;
+		height: 100%;
+	}
+
+	.certificate .certificate-editor .certificate .container {
+		width: 70%;
+		height: 60%;
+	}
+
+
+
+	.certificate .certificate-editor .certificate .container .content {
+		width: 100%;
+		height: 60%;
+		top: 20%;
+	}
+
+	.certificate .certificate-editor .certificate .container .content #chead {
+		/*font-weight: bold;*/
+		font-size: 3.9vmin;
+		/*font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;*/
+		font-family: serif;
+	}
+
+	.certificate .certificate-editor .certificate .container .content #csubhead {
+		/*font-weight: bold;*/
+		font-size: 2.5vmin;
+		font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+		margin-bottom: 0;
+	}
+
+	.certificate .certificate-editor .certificate .container .content #ctext3 {
+		font-size: 2.1vmin;
+		font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+		margin-top: 1.7vmin;
+		margin-bottom: 0;
+	}
+
+	.certificate .certificate-editor .certificate .container .content #cname {
+		font-size: 4.5vmin;
+		font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+		margin-top: .8vmin;
+		padding: 0;
+		margin-bottom: 0;
+		font-family: "Playfair Display";
+	}
+
+	.certificate .certificate-editor .certificate .container .content #cdescription {
+		font-size: 1.5vmin;
+		font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+		margin: 0;
+		margin-top: .8vmin;
+		width: 70%;
+		text-align: center;
+		padding: 0;
+		margin-bottom: 0;
+	}
+
+	.certificate .certificate-editor .certificate .container .content #cissuername {
+		font-size: 1.5vmin;
+		font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+		margin-top: 3vmin;
+		padding: 0;
+		margin-bottom: 0;
+		width: 70%;
+		text-align: left;
+	}
+
+	.certificate .certificate-editor .certificate .container .content #cissuerdesgctr {
+		font-size: 1.5vmin;
+		font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+		margin-top: 1vmin;
+		padding: 0;
+		width: 70%;
+		text-align: left;
+		position: relative;
+	}
+
+	.certificate .certificate-editor .certificate .container .content #certificateid {
+		font-size: 1.5vmin;
+		font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+		margin-top: 1vmin;
+		padding: 0;
+		width: 70%;
+		position: absolute;
+		right: 0;
+		text-align: right;
+	}
+
+
+
+	.certificate .certificate-editor .options {
+		width: 90%;
+		/*height: 100%;*/
+		border-left: 0;
+	}
+
+	.certificate .certificate-editor .options p.head {
+		font-size: 3.5vmin;
+	}
+
+
+	.certificate .certificate-editor .options .input-group label {
+		font-size: 2.7vmin;
+	}
+
+	.certificate .certificate-editor .options .input-group input,
+	.certificate .certificate-editor .options .input-group textarea, 
+	.certificate .certificate-editor .options .input-group select {
+		height: 7vmin;
+		margin-top: 2vmin;
+		font-size: 2.7vmin;
+	}
+
+	.certificate .certificate-editor .options .input-group textarea {
+		height: 15vmin;
+	}
+
+
+
+	.certificate .certificate-editor .options .input-group button {
+		height: 8vmin;
+		width: 100%;
+		background: #222;
+		border: none;
+		font-size: 3vmin;
+		margin-top: 1.7vmin;
+	}
+
+
+	/*generated certificate styling*/
+
+	.certificate p.head {
+		font-size: 3.8vmin;
+		font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+		color: #446;
+	}
+
+	.certificate .certificate-img {
+		height: 50vmin;
+	}
+
+	.certificate p.text {
+		font-size: 2.9vmin;
+		color: #446; 
+		margin-top: 0;
+		margin-bottom: 0;
+		margin-top: 2vmin;
+	}
+
+	.certificate {
+		width: 100%;
+	}
+
+	.certificate .button-group {
+		flex-direction: column;
+		margin-top: 5vmin;
+		width: 90%;
+	}
+
+	.certificate .button-group button {
+		height: 8vmin;
+		width: 90%;
+		background: #222;
+		transition: .4s;
+		color: #fff;
+		font-size: 2.9vmin;
+		margin-left: 0vmin;
+		margin-top: 3vmin;
+	}
+
+	.certificate .button-group button:hover {
+		border-radius: 2vmin;
+	}
+}	

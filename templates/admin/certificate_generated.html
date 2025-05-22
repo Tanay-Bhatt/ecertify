@@ -1,0 +1,47 @@
+<!-- Extend from base admin layout -->
+{% extends "admin/admin_base.html" %}
+
+{% block content %}
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.3/FileSaver.min.js"></script>
+
+	<div class="certificate">
+
+		{% if message %}
+			<p class="message">{{message}}</p>
+		{% endif %}
+
+
+		<p class="head">Certificate Generated Successfully</p>
+
+		<div class="certificate-img">
+			<img src="{{url_for('static', filename='uploads/' + image)}}" alt="">
+		</div>
+		<input type="text" id="username" value="{{user.username}}" hidden />
+		<p class="text">Certificate ID : {{certificate.id}}</p>
+		<p class="text">Username : {{user.username}}</p>
+		<p class="text">Verification Link : <a href="https://ecertify.pythonanywhere.com/verify/{{certificate.id}}">https://ecertify.pythonanywhere.com/verify/{{certificate.id}}</a></p>		
+		<div class="button-group">
+			<button id="downloadpng">
+				Download PNG
+			</button>
+
+			<button id="downloadjpg">
+				Download JPG
+			</button>
+
+			<button id="downloadpdf">
+				Download PDF
+			</button>
+		</div>
+
+	</div>
+
+
+{% endblock content %}
+
+{% block scripts %}
+	<script src="{{url_for('static', filename='admin/js/certificate_generated.js')}}"></script>
+{% endblock scripts %}

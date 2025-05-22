@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" href="{{url_for('static', filename='images/favicon.ico')}}" type="image/x-icon">
+	<link rel="icon" href="{{url_for('static', filename='images/favicon.ico')}}" type="image/x-icon">
+	<title>{% if title %} {{ title }}  {% else %} E-Certify {% endif %} </title>
+
+	<link rel="stylesheet" href="{{url_for('static', filename='admin/css/admin.css')}}">
+	<link rel="stylesheet" href="{{url_for('static', filename='assets/fontawesome-free/css/all.min.css')}}">
+	{% block links %}
+	{% endblock links %}
+</head>
+<body>
+
+	
+
+	<div class="main-content">
+		{% block content %}
+
+		{% endblock content %}
+	</div>
+
+	{% include "admin/includes/header.html"%}
+	{% include "admin/includes/sidebar.html"%}
+	
+	<script>
+		window.onload = ()=> {
+			document.documentElement.style.setProperty('--vfh', window.innerHeight + 'px');
+		}
+	</script>
+
+	{% block scripts %}
+
+	{% endblock scripts %}
+	
+</body>
+</html>

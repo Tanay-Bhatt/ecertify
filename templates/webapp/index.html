@@ -1,0 +1,22 @@
+{% extends "webapp/base.html" %}
+
+{% block main %}
+	<p class="head-index">
+		Verify your <span class="grad">E-Certify</span> <br> Certification.
+	</p>
+
+	<div class="verification-form">
+		
+		<p class="text">
+			You are one step away from verification
+		</p>
+
+		<form action="{{url_for('verification')}}" method="post">
+			<input type="text" name="cid" placeholder="Certificate ID" required />
+			<input type="submit" value="Verify" />
+		</form>
+
+		<script src=""></script>
+
+	</div>
+{% endblock %}

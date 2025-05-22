@@ -1,0 +1,69 @@
+<!-- Extend from base admin layout -->
+{% extends "admin/admin_base.html" %}
+
+{% block content %}
+	
+
+	<div class="students">
+
+		{% if message %}
+			<p class="message">{{message}}</p>
+		{% endif %}
+
+		<p class="head">All Certificates</p>
+
+		<table class="student-table">
+			<thead>
+				<tr>
+					<td>Certificate ID</td>
+					<td>Username</td>
+					<td>Name</td>
+					<td>Email</td>
+					<td>Verification Link</td>
+				</tr>
+			</thead>
+
+			<tbody>
+				{% for certificate in certificates %}
+					<tr>
+						<td>{{certificate.id}}</td>
+						<td>{{certificate.username}}</td>
+						<td>{{certificate.name}}</td>
+						<td>{{certificate.email}}</td>
+						<td><a target="_blank" href="{{base_url}}/verify/{{certificate.id}}">http://tanayb700.pythonanywhere.com/verify/{{certificate.id}}</a></td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+
+		<div class="pagination">
+
+			{% if page > 1 %}
+				<div class="link"><a href="/admin/all-certificates/{{page-1}}">Prev</a></div>
+			{% endif %}
+			
+			{% for i in range(1, len_certificates|int + 1) %}
+				{% if page == i %}
+					<div class="link active"><a href="/admin/all-certificates/{{i}}">{{i}}</a></div>
+				{% else %}
+					<div class="link"><a href="/admin/all-certificates/{{i}}">{{i}}</a></div>
+				{% endif %}
+				
+				
+			{% endfor %}
+			{% if len_certificates > 1 %}
+				{% if page != len_certificates %}
+					<div class="link"><a href="/admin/all-certificates/{{page+1}}">Next</a></div>
+				{% endif %}
+				<div class="link"><a href="/admin/all-certificates/{{len_certificates}}">Last</a></div>
+			{% endif %}
+		</div>
+
+	</div>
+
+
+{% endblock content %}
+
+{% block scripts %}
+	<script src="{{url_for('static', filename='admin/js/students.js')}}"></script>
+{% endblock scripts %}
