@@ -3,7 +3,6 @@ from admin.models import CertifyUser
 from scripts.password import hash_password
 from datetime import datetime
 
-# Check if admin already exists
 existing = CertifyUser.query.filter_by(username="{adminusername}").first()
 if existing:
     print("⚠️ Admin user already exists.")

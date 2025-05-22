@@ -14,7 +14,7 @@ from flask_mail import Message
 import base64
 import os
 
-BASE_URL = "BASEURLHERE"
+BASE_URL = "BASE_URL"
 
 @app.route(app.config["ADMINHOME"])
 def admin_home():
@@ -310,6 +310,7 @@ Verification link : {BASE_URL}/verify/{certificate.id}
 		mail.send(msg)
 	except Exception as e:
 		print(e)
+		input()
 		pass
 	return render_template(
 		"admin/certificate_generated.html",
@@ -369,7 +370,7 @@ def add_templates():
         if template_name in existing_templates:
             continue
 
-        src = url_for('static', filename=f'assets/certificates/template{i}.png')
+        src = f'template{i}.png'
         color = '#222222'
 
         new_template = models.CertifyTemplates(
